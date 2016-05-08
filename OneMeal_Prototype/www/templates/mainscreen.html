@@ -1,0 +1,27 @@
+<ion-view title="MainScreen" ng-init="init()">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar" ng-repeat="x in names" ng-click="openProfile(x.UserID, x.Id)">
+                    <img ng-src="http://graph.facebook.com/{{x.UserID}}/picture?type=normal" height="100" width="100" />
+                    <h2>{{x.MealDate | date: 'dd/MM/yyyy hh:mm'}}</h2>
+                    <p>{{x.Name}}, {{x.Age}}</p>
+                    <p>{{x.Profession}}</p>
+            </div>
+            <!--a href="#" class="item item-icon-left">
+                <i class="icon ion-home"></i>
+
+            </a>-->
+        </div>
+    </ion-content>
+    <div class="tabs tabs-icon-only">
+        <a nav-clear class="tab-item disable-user-behavior active" title="Posting" ui-sref="post"> <!---->
+            <i class="icon ion-coffee"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior active" title="Home" ui-sref="mainscreen">
+            <i class="icon ion-home"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior active" title="History" ui-sref="history">
+            <i class="icon ion-person-stalker"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+    </div>
+</ion-view>

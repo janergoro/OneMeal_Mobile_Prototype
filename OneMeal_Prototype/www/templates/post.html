@@ -1,0 +1,31 @@
+﻿<ion-view title="Post" ng-init="init()">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="OneMeal(datetimeValue,location)">
+            Send
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div ion-datetime-picker monday-first ng-model="datetimeValue">
+            <button style="width:100%" class="icon ion-coffee button button-energized">
+                <strong>{{datetimeValue| date: "yyyy-MM-dd H:mm"}}</strong>
+            </button>
+        </div>
+        <div>
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input ng-value="location" id="{{location}}" type="search" placeholder="Search">
+            </label>
+        </div>
+    </ion-content>
+    <div class="tabs tabs-icon-only">
+        <a nav-clear class="tab-item disable-user-behavior active" title="Posting" ui-sref="post">
+            <i class="icon ion-coffee"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior active" title="Home" ui-sref="mainscreen">
+            <i class="icon ion-home"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior active" title="History" ui-sref="history">
+            <i class="icon ion-person-stalker"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+    </div>
+</ion-view>

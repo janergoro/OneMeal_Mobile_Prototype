@@ -1,0 +1,53 @@
+<ion-view title="My Profile" ng-init="init()">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="SubmitProfile()">
+            Submit
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div ng-repeat="x in ProfileInfoFields" class='table table-striped'>
+            <div ng-style="{'background-image':'url(http://graph.facebook.com/{{x.UserId}}/picture?type=large)'}" class="user">
+
+            </div>
+            <div>
+                <h1>{{x.Name}}, {{x.Age}}</h1>
+                <br />
+                <label class="item item-input">
+                    <span class="input-label">Profession</span>
+                    <input type="text" ng-model="x.Profession">
+                </label>
+            </div>
+            <div>
+                <h2>About me</h2>
+            </div>
+            <div>
+                    <!--<p>{{x.About}}</p>-->
+                <label class="item item-input">
+                    <span class="input-label">About</span>
+                    <input type="text" ng-model="x.About">
+                </label>
+            </div>
+            <div>
+                <h2>Keywords</h2>
+            </div>
+            <div>
+                   <!--<p>{{x.Keywords}}</p>-->
+                <label class="item item-input">
+                    <span class="input-label">Keywords</span>
+                    <input type="text" ng-model="x.Keywords">
+                </label>
+            </div>
+        </div>
+    </ion-content>
+    <div class="tabs tabs-icon-only">
+        <a nav-clear class="tab-item disable-user-behavior active" title="Posting" ui-sref="post">
+            <i class="icon ion-coffee"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior active" title="Home" ui-sref="mainscreen">
+            <i class="icon ion-home"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior active" title="History" ui-sref="history">
+            <i class="icon ion-person-stalker"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+    </div>
+</ion-view>
