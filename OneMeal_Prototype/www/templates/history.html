@@ -1,4 +1,4 @@
-﻿<ion-view title="Pending" ng-init="init()">
+﻿<ion-view title="OneMeal" ng-init="init()">
     <ion-content>
         <div class="list card">
             <div class="item item-divider">
@@ -8,6 +8,7 @@
                 <!--<div class="item item-text-wrap">-->
                     <img ng-src="http://graph.facebook.com/{{x.UserID}}/picture?type=normal" height="100" width="100" />
                     <h2>{{x.MealDate | date: 'dd/MM/yyyy hh:mm'}}</h2>
+                    <h3>{{x.Location}}</h3>
                     <p>{{x.Name}}, {{x.Age}}</p>
                     <p>{{x.Profession}}</p>
                 <!--</div>-->
@@ -21,6 +22,7 @@
                 <div class="item item-thumbnail-left" ng-repeat="x in archive" ng-click="openProfile(x.Id, x.UserID, ARCHIVED_PROFILE)">
                     <img ng-src="http://graph.facebook.com/{{x.UserID}}/picture?type=normal" height="100" width="100" />
                     <h2>{{x.MealDate | date: 'dd/MM/yyyy hh:mm'}}</h2>
+                    <h3>{{x.Location}}</h3>
                     <p>{{x.Name}}, {{x.Age}}</p>
                     <p>{{x.Profession}}</p>
                 </div>

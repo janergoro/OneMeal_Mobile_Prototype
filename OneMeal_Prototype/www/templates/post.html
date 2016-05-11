@@ -1,19 +1,19 @@
-﻿<ion-view title="Post" ng-init="init()">
+﻿<ion-view title="OneMeal" ng-init="init()">
     <ion-nav-buttons side="right">
-        <button class="button" ng-click="OneMeal(datetimeValue,location)">
+        <button class="button" ng-click="OneMeal()">
             Send
         </button>
     </ion-nav-buttons>
     <ion-content>
-        <div ion-datetime-picker monday-first ng-model="datetimeValue">
+        <div ion-datetime-picker monday-first ng-model="chosen.datetimeValue">
             <button style="width:100%" class="icon ion-coffee button button-energized">
-                <strong>{{datetimeValue| date: "yyyy-MM-dd H:mm"}}</strong>
+                <strong>{{chosen.datetimeValue| date: "yyyy-MM-dd H:mm"}}</strong>
             </button>
         </div>
         <div>
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input ng-value="location" id="{{location}}" type="search" placeholder="Search">
+                <input placeholder="location" ng-model="chosen.location" type="text">
             </label>
         </div>
     </ion-content>
